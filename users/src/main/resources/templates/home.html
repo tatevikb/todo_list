@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo Lists Service</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container" style="display:table; width:40%; margin-top:4%">
+        <div style="display:table-row">
+            <div style="display:table-cell" class="align-top">
+                <!-- log in form -->
+                <form action="#" th:action="@{/login}" th:object="${creds}" method="post">
+                    <div class="form-group">
+                        <label for="usernameLogIn">Username</label>
+                        <input type="text" class="form-control" id="usernameLogIn" th:field="*{username}">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordLogIn">Password</label>
+                        <input type="password" class="form-control" id="passwordLogIn" th:field="*{password}">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Log In</button>
+                </form>
+            </div>
+            <div style="display:table-cell; width:20%"></div>
+            <div style="display:table-cell">
+                <!-- create form -->
+                <form action="#" th:action="@{/create}" th:object="${creds}" method="post">
+                    <div class="form-group">
+                        <label for="usernameCreate">Username</label>
+                        <input type="text" class="form-control" id="usernameCreate" th:field="*{username}">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordCreate">Password</label>
+                        <input type="password" class="form-control" id="passwordCreate" th:field="*{password}">
+                    </div>
+                    <div class="form-group">
+                        <label for="passwordReCreate">Retype Password</label>
+                        <input type="password" class="form-control" id="passwordReCreate">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
